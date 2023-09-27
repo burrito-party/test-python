@@ -12,19 +12,16 @@ def index():
     read = bool(request.args.get('read'))
 
     if name:
-        cursor.execute(
-            "SELECT * FROM books WHERE name LIKE '%" + name + "%'"
-        )
-        books = [Book(*row) for row in cursor]
+        sql = "SELECT * FROM books WHERE name LIKE %s"
+        cursor.execute(sql, ('%' + name + '%',))
 
     elif author:
-        cursor.execute(
-            "SELECT * FROM books WHERE author LIKE '%" + author + "%'"
-        )
-        books = [Book(*row) for row in cursor]
+        sql = "SELECT * FROM books WHERE author LIKE %s"
+        cursor.execute(sql, ('%' + author + '%',))
 
     else:
         cursor.execute("SELECT name, author, read FROM books")
-        books = [Book(*row) for row in cursor]
+
+    books = [Book(*row) for row in cursor]
 
     return render_template('books.html', books=books)
