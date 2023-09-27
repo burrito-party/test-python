@@ -7,7 +7,7 @@ from server.models import *
 from server.routes import *
 
 default_books = [
-    ("The Hobbit", "JRR Tolkien", True),
+    ("The Hobbit", "JRR Tolkien", False),
     ("The Fellowship of the Ring", "JRR Tolkien", True),
     ("The Eye of the World", "Robert Jordan", False),
     ("A Game of Thrones", "George R. R. Martin", True),
