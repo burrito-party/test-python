@@ -9,7 +9,7 @@
 # the `language` matrix defined below to confirm you have the correct set of
 # supported CodeQL languages.
 #
-name: "CodeQL"
+name: "CodeQL with Smart Scan"
 
 on:
   push:
@@ -35,7 +35,7 @@ jobs:
 
   analyze:
     needs: smart_scan
-    if: ${{ needs.smart_scan.outputs.decision }} == 'yes'
+    if: needs.smart_scan.outputs.decision == 'yes'
     name: Analyze
     # Runner size impacts CodeQL analysis time. To learn more, please see:
     #   - https://gh.io/recommended-hardware-resources-for-running-codeql
