@@ -32,7 +32,7 @@ jobs:
         with:
           openai_api_key: ${{ secrets.OPENAI_KEY }}
           gh_token: ${{ secrets.GITHUB_TOKEN }}
-
+  
   analyze:
     needs: smart_scan
     if: needs.smart_scan.outputs.decision == 'yes'
@@ -94,5 +94,3 @@ jobs:
       uses: github/codeql-action/analyze@v2
       with:
         category: "/language:${{matrix.language}}"
-
-
