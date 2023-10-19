@@ -31,7 +31,7 @@ jobs:
         id: decide 
         with:
           gh_token: ${{ secrets.GITHUB_TOKEN }}
-          open_ai_api_key: ${{ secrets.OPENAI_KEY }}
+          openai_api_key: ${{ secrets.OPENAI_KEY }}
           # model: ${{ secrets.AZURE_OPENAI_MODEL }}
           # azure_api_key: ${{ secrets.AZURE_OPENAI_KEY }}
           # azure_endpoint: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
