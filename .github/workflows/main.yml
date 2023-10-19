@@ -30,8 +30,11 @@ jobs:
       - uses: leftrightleft/smart-scan@support-for-azure
         id: decide 
         with:
-          openai_api_key: ${{ secrets.OPENAI_KEY }}
           gh_token: ${{ secrets.GITHUB_TOKEN }}
+          model: ${{ secrets.AZURE_OPENAI_MODEL }}
+          azure_api_key: ${{ secrets.AZURE_OPENAI_KEY }}
+          azure_endpoint: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          azure_deployment_id: ${{ secrets.AZURE_OPENAI_DEPLOYMENT_ID }}
   
   analyze:
     needs: smart_scan
