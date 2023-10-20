@@ -19,6 +19,7 @@ on:
     branches: [ "main" ]
   schedule:
     - cron: '42 11 * * 2'
+  workflow_dispatch:
 
 jobs:
   smart_scan:
