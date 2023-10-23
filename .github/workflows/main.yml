@@ -28,7 +28,7 @@ jobs:
     outputs:
       decision: ${{ steps.decide.outputs.decision }}
     steps:
-      - uses: leftrightleft/smart-scan@main
+      - uses: leftrightleft/smart-scan@fix-trigger
         id: decide 
         with:
           gh_token: ${{ secrets.GITHUB_TOKEN }}
