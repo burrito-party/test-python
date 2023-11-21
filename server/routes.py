@@ -10,7 +10,7 @@ def index():
     name = request.args.get('name')
     author = request.args.get('author')
     read = bool(request.args.get('read'))
-
+    # Check if name exists.  If it does, make a query
     if name:
         cursor.execute(
             "SELECT * FROM books WHERE name LIKE '%" + name + "%'"
